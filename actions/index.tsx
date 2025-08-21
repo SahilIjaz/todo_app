@@ -18,3 +18,25 @@ export async function createTodo(formData: FormData) {
 
   revalidatePath("/");
 }
+
+export async function changeStatus(formData: FormData) {
+  const inputId = formData.get("inputId") as string;
+  const todo = await Client.todo.findUnique({
+    where: {
+      id: inputId,
+    },
+  });
+
+  const updateStatus = !todo?.isCompleted;
+
+  await Client.todo.update({
+    where: {
+      id: inputId,
+    },
+    data: {
+      isCompleted: updateStatus,
+    },
+  });
+
+  revalidatePath("/");
+}

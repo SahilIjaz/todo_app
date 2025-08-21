@@ -9,7 +9,7 @@ async function getData() {
       isCompleted: true,
     },
     orderBy: {
-      createdAt: "asc",
+      createdAt: "desc",
     },
   });
 
@@ -17,8 +17,10 @@ async function getData() {
 }
 
 import AddTodo from "@/components/todos/addtodo";
+import Todo from "@/components/Todo";
 export default async function Home() {
   const data = await getData();
+  console.log("data is:", data);
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
       <span className="text-4xl font-extrabold uppercase">Todo App</span>
@@ -30,7 +32,9 @@ export default async function Home() {
         <AddTodo />
         <div className="flex flex-col gap-5 items-center justify-center mt-10 w-screen"></div>
         {data.map((todo, id) => (
-          <div key={id}>{todo.totle}</div>
+          <div key={id}>
+            <Todo todo={todo} />
+          </div>
         ))}
       </div>
     </div>
