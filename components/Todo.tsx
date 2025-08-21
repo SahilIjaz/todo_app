@@ -2,6 +2,7 @@ import React from "react";
 import { todoProps } from "@/types";
 import ChangeTodo from "./changeTodo";
 import EditTodo from "../components/todos/editTodo";
+import DeleteTodo from "../components/todos/deleteTodo";
 
 function Todo({ todo }: { todo: todoProps }) {
   return (
@@ -11,7 +12,9 @@ function Todo({ todo }: { todo: todoProps }) {
       <div className="flex items-center mx-2">
         <EditTodo todo={todo} />
       </div>
-      <div className="flex items-center"></div>
+      <div className="flex items-center">
+        <DeleteTodo todo={todo} />
+      </div>
     </div>
   );
 }
