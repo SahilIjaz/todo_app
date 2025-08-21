@@ -1,7 +1,24 @@
 import Image from "next/image";
+import { Client } from "@/utils/prisma";
+
+async function getData() {
+  const data = await Client.todo.findMany({
+    select: {
+      id: true,
+      totle: true,
+      isCompleted: true,
+    },
+    orderBy: {
+      createdAt: "asc",
+    },
+  });
+
+  return data;
+}
 
 import AddTodo from "@/components/todos/addtodo";
-export default function Home() {
+export default async function Home() {
+  const data = await getData();
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
       <span className="text-4xl font-extrabold uppercase">Todo App</span>
@@ -11,7 +28,10 @@ export default function Home() {
       <div className="flex justify-center flex-col items-center">
         {}
         <AddTodo />
-        {}
+        <div className="flex flex-col gap-5 items-center justify-center mt-10 w-screen"></div>
+        {data.map((todo, id) => (
+          <div key={id}>{todo.totle}</div>
+        ))}
       </div>
     </div>
   );

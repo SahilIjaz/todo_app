@@ -23,11 +23,12 @@
 import React from "react";
 import InputComponent from "@/components/inputcomponent";
 import ButtonComponent from "@/components/buttonComponent";
+import { createTodo } from "@/actions";
 
 function AddTodo() {
   return (
     <div>
-      <form>
+      <form action={createTodo}>
         <div className="flex gap-2">
           <InputComponent
             name="input"
