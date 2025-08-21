@@ -9,7 +9,7 @@ function Todo({ todo }: { todo: todoProps }) {
       <ChangeTodo todo={todo} />
       <span className="text-center font-bold uppercase grow">{todo.totle}</span>
       <div className="flex items-center mx-2">
-        <EditTodo />
+        <EditTodo todo={todo} />
       </div>
       <div className="flex items-center"></div>
     </div>

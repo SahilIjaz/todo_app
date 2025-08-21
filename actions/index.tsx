@@ -40,3 +40,19 @@ export async function changeStatus(formData: FormData) {
 
   revalidatePath("/");
 }
+
+export async function editTodo(formData: FormData) {
+  const input = formData.get("newTitle") as string;
+  const inputId = formData.get("inputId") as string;
+
+  await Client.todo.update({
+    where: {
+      id: inputId,
+    },
+    data: {
+      totle: input,
+    },
+  });
+
+  revalidatePath("/");
+}
