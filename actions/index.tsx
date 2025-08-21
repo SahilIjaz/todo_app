@@ -56,3 +56,20 @@ export async function editTodo(formData: FormData) {
 
   revalidatePath("/");
 }
+
+export async function deleteTodo(formData: FormData) {
+  const inputId = formData.get("inputId") as string;
+
+  if (!inputId) {
+    throw new Error("Todo ID is required for deletion.");
+  }
+
+  await Client.todo.delete({
+    where: {
+      id: inputId,
+    },
+  });
+
+  // Refresh the UI
+  revalidatePath("/");
+}
