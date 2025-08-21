@@ -1,7 +1,31 @@
+// import React from "react";
+// import InputProps from "@/types";
+
+// const inputcomponent = ({ name, type, placeholder, value }: InputProps) => {
+//   return (
+//     <div>
+//       <input
+//         name={name}
+//         type={type}
+//         placeholder={placeholder}
+//         value={value}
+//         className="block w-full p-4 mx-2 border rounded-lg text-base bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
+//       />
+//     </div>
+//   );
+// };
+
+// export default inputcomponent;
+
 import React from "react";
 import InputProps from "@/types";
 
-const inputcomponent = ({ name, type, placeholder, value }: InputProps) => {
+const InputComponent: React.FC<InputProps> = ({
+  name,
+  type,
+  placeholder,
+  value,
+}) => {
   return (
     <div>
       <input
@@ -15,4 +39,4 @@ const inputcomponent = ({ name, type, placeholder, value }: InputProps) => {
   );
 };
 
-export default inputcomponent;
+export default InputComponent;

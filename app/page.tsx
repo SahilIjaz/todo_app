@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import AddTodo from "@/components/todos/addtodo";
 export default function Home() {
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
@@ -9,6 +10,7 @@ export default function Home() {
       </h1>
       <div className="flex justify-center flex-col items-center">
         {}
+        <AddTodo />
         {}
       </div>
     </div>
