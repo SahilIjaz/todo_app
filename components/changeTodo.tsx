@@ -10,6 +10,7 @@ function ChangeTodo({ todo }: { todo: todoProps }) {
       <input name="inputId" value={String(todo.id)} type="hidden" />
       <Button
         text={<FaCheck />}
+        
         actionButton
         bgColor={todo.isCompleted ? "bg-green-400" : "bg-blue-500"}
       />
