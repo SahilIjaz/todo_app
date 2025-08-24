@@ -3,7 +3,7 @@ import * as actions from "@/actions";
 import { todoProps } from "@/types";
 import { FaCheck } from "react-icons/fa6";
 
-import Button from "@/components/buttonComponent"; // make sure correct path
+import Button from "@/components/buttonComponent";
 function ChangeTodo({ todo }: { todo: todoProps }) {
   return (
     <form action={actions.changeStatus}>
