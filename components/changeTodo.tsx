@@ -11,6 +11,7 @@ function ChangeTodo({ todo }: { todo: todoProps }) {
       <Button
         text={<FaCheck />}
 
+       
         
         actionButton
         bgColor={todo.isCompleted ? "bg-green-400" : "bg-blue-500"}
