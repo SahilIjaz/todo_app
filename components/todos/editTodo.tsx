@@ -8,25 +8,6 @@ import ButtonComponent from "../buttonComponent";
 import { todoProps } from "@/types";
 import * as actions from "@/actions";
 
-// function EditTodo({ todo }: { todo: todoProps }) {
-//   const [editTodo, setEditTodoState] = useState(false);
-
-//   const handleEdit = () => {
-//     setEditTodoState(!editTodo);
-//   };
-//   console.log("edi tot : ", editTodo);
-//   return (
-//     <div className="flex gap-5 items-center">
-//       <ButtonComponent onClick={handleEdit} text={<MdEdit />} actionButton />
-//       {editTodo ? (
-//         <form>
-//           <InputComponent type="hidden" name="id" value={todo.id} />
-//           <ButtonComponent type="submit" text="save" />
-//         </form>
-//       ) : null}
-//     </div>
-//   );
-// }
 
 function EditTodo({ todo }: { todo: todoProps }) {
   console.log("todo in EditTodo:", todo);
